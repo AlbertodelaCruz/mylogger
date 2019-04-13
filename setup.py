@@ -8,9 +8,9 @@ setup(
     platforms='Linux',
     packages=find_packages(exclude=['tests', 'specs', 'integration_specs']),
     install_requires=[
-        'infcommon'
+        'infcommon==0.0.1'
         ],
     dependency_links=[
-        'git+https://github.com/aleasoluciones/infcommon.git#egg=infcommon'
+        'git+https://github.com/aleasoluciones/infcommon.git#egg=infcommon-0.0.1'
         ]
 )
