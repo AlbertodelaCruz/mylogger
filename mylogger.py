@@ -20,14 +20,17 @@ def mylogger(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         processed_args = _process_args(list(args)[1:])
-        logger.info("Method name: {}{}{} and input: {}{}{}".format(CYAN,
+        processed_kwargs = _process_args(list(kwargs))
+        logger.info("Method name: {}{}{} and input: {}{}{}{}".format(CYAN,
                                                                    func.__name__,
                                                                    ENDC,
                                                                    GREEN,
                                                                    processed_args,
+                                                                   processed_kwargs,
                                                                    ENDC))
         result = func(*args, **kwargs)
         logger.info("Output: {}{}{}".format(BLUE, result, ENDC))
+        return result
     return wrapper
 
 
